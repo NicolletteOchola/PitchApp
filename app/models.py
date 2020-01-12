@@ -34,3 +34,9 @@ class Post(db.Model):
     def __repr__(self):
         return f"Post('{self.title}', '{self.posted_date}', '{self.category}')"
     
+  class Comment(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    comment = db.Column(db.Text, nullable=False)
+    posted_date = db.Column(db.DateTime, default=datetime.utcnow, nullable=False)
+    user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
+    post_id = db.Column(db.Integer, db.ForeignKey('post.id'))
