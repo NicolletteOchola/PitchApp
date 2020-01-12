@@ -17,3 +17,10 @@ def new_post():
         flash('You pitch has been created!', 'success')
         return redirect(url_for('main.home'))
     return render_template('new-post.html', title='New Pitch', form=form, legend='New Pitch')
+
+@posts.route("/post/<int:post_id>")
+def post(post_id):
+    post = Post.query.get_or_404(post_id)
+    comments = Comment.query.filter_by(post_id = post_id).all()
+    return render_template('post.html', title=post.title, post=post, comments = comments)
+
