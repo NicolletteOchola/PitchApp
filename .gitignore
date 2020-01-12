@@ -1,0 +1,7 @@
+start.sh__pycache__/
+*.py[cod]
+*.class
+instance
+
+
+start.sh
