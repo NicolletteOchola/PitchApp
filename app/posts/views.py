@@ -53,3 +53,26 @@ def delete_post(post_id):
     flash('Your pitch has been deleted!', 'success')
     return redirect(url_for('main.home'))  
 
+@posts.route("/post/<string:category>")
+def category_post(category):
+    
+    post = Post.query.filter_by(category=category).all()
+    print("..............", post)
+    return render_template('category.html', post=post, category=category) 
+
+@posts.route("/post/<int:post_id>/comment", methods=['GET', 'POST'])
+@login_required
+def new_comment(post_id):
+    post = Post.query.get_or_404(post_id)
+    
+    form = CommentForm()
+    if form.validate_on_submit():
+        comment = Comment(comment=form.comment.data, author=current_user, post_id = post_id )
+        db.session.add(comment)
+        db.session.commit()
+        # comments = Comment.query.all()
+        flash('You comment has been created!', 'success')
+        return redirect(url_for('posts.post', post_id=post.id))
+    return render_template('new-comment.html', title='New Comment', form=form, legend='New Comment')
+
+
