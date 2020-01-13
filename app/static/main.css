@@ -1,0 +1,11 @@
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  background: #fafafa;
+  color: #333333;
+  margin-top: 5rem;
+}
+
