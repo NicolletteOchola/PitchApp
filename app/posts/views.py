@@ -73,6 +73,6 @@ def new_comment(post_id):
         # comments = Comment.query.all()
         flash('You comment has been created!', 'success')
         return redirect(url_for('posts.post', post_id=post.id))
-    return render_template('new-comment.html', title='New Comment', form=form, legend='New Comment')
+    return render_template('new-content.html', title='New Comment', form=form, legend='New Comment')
 
 

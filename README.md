@@ -7,16 +7,15 @@ Nicollette Ochola
 ## BDD
 | Behaviour     |  Input          | Output        |
 | :-----------: |:---------------:| :-----------: |
-|View Business sources|BUSINESS button| Business page is diasplayed|
-|View Entertainment sources| ENTERTAINMENT button|Entertainment page is displayed|
-|View Sports sources|SPORTS button|Sports section is displayed|
-|View top headlines|SPORTS button|Top headlines are displayed|
-|View general news|EVERYTHING button|The general news section displayed|
+|Register new user|Username,email,password|Login form|
+|Login user with the registered credentials|email and password|Home page of the app with latest pitches displayed|
+|Create new pitch|Titile, the pitch and the category of the pitch|Succes message for pitch creation and pitch added to latest pitches|
+|Add new comment|The comment(click on submit button)|Success message and the comment on pitch|
 
 ## Technologies Used
 - Python 3.6
 - HTML/CSS
-- Bootstrap
+- Bootstrap (MDB bootstrap)
 - Javascript
 
 ## Setup Requirements
@@ -41,6 +40,6 @@ nicoeochola@gmail.com
 +254 726 868063
 
 ## License
-MIT Licence (c )Nicollette Ochola 2020
+MIT Licence (c) Nicollette Ochola 2020
 
 
