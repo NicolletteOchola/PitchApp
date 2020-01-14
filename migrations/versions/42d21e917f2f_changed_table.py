@@ -1,8 +1,8 @@
-"""migrate model classes
+"""Changed table
 
-Revision ID: 045ec528ffb6
+Revision ID: 42d21e917f2f
 Revises: 
-Create Date: 2020-01-13 16:49:52.455422
+Create Date: 2020-01-14 14:26:53.804521
 
 """
 from alembic import op
@@ -10,7 +10,7 @@ import sqlalchemy as sa
 
 
 # revision identifiers, used by Alembic.
-revision = '045ec528ffb6'
+revision = '42d21e917f2f'
 down_revision = None
 branch_labels = None
 depends_on = None
@@ -23,7 +23,7 @@ def upgrade():
     sa.Column('username', sa.String(length=225), nullable=False),
     sa.Column('email', sa.String(length=255), nullable=False),
     sa.Column('image', sa.String(length=225), nullable=False),
-    sa.Column('password', sa.String(length=60), nullable=False),
+    sa.Column('pass_secure', sa.String(length=255), nullable=True),
     sa.PrimaryKeyConstraint('id'),
     sa.UniqueConstraint('username')
     )

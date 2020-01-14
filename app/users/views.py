@@ -33,7 +33,7 @@ users = Blueprint('users', __name__)
 def register():
     form = RegistrationForm()
     if form.validate_on_submit():
-        user =  User(email = form.email.data, username = form.username.data,password = form.password.data)
+        user =  User(email = form.email.data, username = form.username.data, password = form.password.data)
         user.save_user()
         try:
             msg = Message('Hello! Welcome to PITCH. We are glad you joined us.',sender=('nicoleochola@gmail.com'))
@@ -61,15 +61,17 @@ def register():
 
 @users.route("/login", methods=['GET', 'POST'])
 def login():
-    form = LoginForm()
-    if form.validate_on_submit():
-        user = User.query.filter_by(username = form.username.data).first()
-        if user is not None and user.verify_password(form.password.data):
-            login_user(user,form.remember.data)
+    login_form = LoginForm()
+    import pdb; pdb.set_trace()
+    if login_form.validate_on_submit():
+        user = User.query.filter_by(email = login_form.email.data).first()
+        import pdb; pdb.set_trace()
+        if user is not None and user.verify_password(login_form.password.data):
+            login_user(user,login_form.remember.data)
             return redirect(request.args.get('next') or url_for('main.home'))
         else:
             flash('Invalid Username or Password')
-    return render_template('login.html',form = form)
+    return render_template('login.html',form = login_form)
 
 @users.route("/logout")
 def logout():
