@@ -17,6 +17,12 @@ class User(db.Model, UserMixin):
     posts = db.relationship('Post', backref='author', lazy=True)
     comments = db.relationship('Comment', backref='author', lazy=True)
 
+    def save_user(self):
+        db.session.add(self)
+        db.session.commit()
+    def delete_user(self):
+        db.session.delete(self)
+        db.session.commit()
     
     def __repr__(self):
         return f'User {self.username}'
@@ -34,7 +40,7 @@ class Post(db.Model):
     def __repr__(self):
         return f"Post('{self.title}', '{self.posted_date}', '{self.category}')"
     
-  class Comment(db.Model):
+class Comment(db.Model):
       id = db.Column(db.Integer, primary_key=True)
       comment = db.Column(db.Text, nullable=False)
       posted_date = db.Column(db.DateTime, default=datetime.utcnow, nullable=False)

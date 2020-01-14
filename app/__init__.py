@@ -26,8 +26,7 @@ def create_app(config_name):
     # Creating the app configurations
     app.config.from_object(config_options[config_name])
     
-    app.config['SECRET_KEY'] = '6647hdhe779ndmnd9383nj2u'
-    # app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql+psycopg2://josylad:p@localhost/pitchy'
+    app.config['SECRET_KEY'] = 'WOW'
     print(app.config['SQLALCHEMY_DATABASE_URI'])
     app.config['DEBUG']=True
     db.init_app(app)
