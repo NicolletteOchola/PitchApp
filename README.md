@@ -13,7 +13,9 @@ Nicollette Ochola
 |Add new comment|The comment(click on submit button)|Success message and the comment on pitch|
 
 ## Technologies Used
-- Python 3.6
+- Flask
+- Postgres SQL
+- Python 3.6.10
 - HTML/CSS
 - Bootstrap (MDB bootstrap)
 - Javascript
