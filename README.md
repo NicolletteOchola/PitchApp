@@ -39,6 +39,9 @@ No known bugs, if you encounter any, feel free to contact me.
 nicoeochola@gmail.com
 +254 726 868063
 
+## Live Link
+https://nicolepitch.herokuapp.com/
+
 ## License
 MIT Licence (c) Nicollette Ochola 2020
 
