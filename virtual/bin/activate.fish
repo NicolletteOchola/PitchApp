@@ -29,7 +29,7 @@ end
 # unset irrelevant variables
 deactivate nondestructive
 
-set -gx VIRTUAL_ENV "/mnt/c/users/nicol/Moringa/Python/Pitch/virtual"
+set -gx VIRTUAL_ENV "/mnt/c/Users/nicol/Moringa/Python/PitchApp/virtual"
 
 set -gx _OLD_VIRTUAL_PATH $PATH
 set -gx PATH "$VIRTUAL_ENV/bin" $PATH
